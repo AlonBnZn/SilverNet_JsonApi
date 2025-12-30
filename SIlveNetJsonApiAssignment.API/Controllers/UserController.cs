@@ -2,8 +2,10 @@
 using JsonApiDotNetCore.Controllers;
 using JsonApiDotNetCore.Controllers.Annotations;
 using JsonApiDotNetCore.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SIlveNetJsonApiAssignment.API.Resources;
+using SilverNetJsonApiAssignment.API.Authorization;
 
 namespace SIlveNetJsonApiAssignment.API.Controllers
 {
@@ -17,30 +19,36 @@ namespace SIlveNetJsonApiAssignment.API.Controllers
         }
 
         [HttpGet("tenants/{tenantId}/users")]
+        [Authorize(Policy = Policies.User)]
         public override Task<IActionResult> GetAsync(CancellationToken cancellationToken)
         {
             return base.GetAsync(cancellationToken);
         }
 
         [HttpGet("tenants/{tenantId}/users/{id}")]
+        [Authorize(Policy = Policies.User)]
         public override Task<IActionResult> GetAsync(long id, CancellationToken cancellationToken)
         {
             return base.GetAsync(id, cancellationToken);
         }
 
         [HttpPost("tenants/{tenantId}/users")]
+        [Authorize(Policy = Policies.User)]
         public override Task<IActionResult> PostAsync([FromBody] UserResource resource, CancellationToken cancellationToken)
         {
             return base.PostAsync(resource, cancellationToken);
         }
 
         [HttpPatch("tenants/{tenantId}/users/{id}")]
+        [Authorize(Policy = Policies.User)]
+
         public override Task<IActionResult> PatchAsync(long id, [FromBody] UserResource resource, CancellationToken cancellationToken)
         {
             return base.PatchAsync(id, resource, cancellationToken);
         }
 
         [HttpDelete("tenants/{tenantId}/users/{id}")]
+        [Authorize(Policy = Policies.User)]
         public override Task<IActionResult> DeleteAsync(long id, CancellationToken cancellationToken)
         {
             return base.DeleteAsync(id, cancellationToken);
