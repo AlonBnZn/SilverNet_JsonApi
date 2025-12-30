@@ -75,25 +75,23 @@ namespace SIlveNetJsonApiAssignment.API.Services
                     throw new Exception("Tenant not found");
                 }
 
-                foreach (var attr in _targetedFields.Attributes)
+                if (resource.Name != null && resource.Name != tenant.Name)
                 {
-                    switch (attr.Property.Name)
-                    {
-                        case nameof(TenantResource.Name):
-                            _tenantValidation.ValidateName(resource.Name);
-                            tenant.SetName(resource.Name);
-                            break;
 
-                        case nameof(UserResource.Phone):
-                            _tenantValidation.ValidatePhone(resource.Phone);
-                            tenant.SetPhone(resource.Phone);
-                            break;
+                    _tenantValidation.ValidateName(resource.Name);
+                    tenant.SetName(resource.Name);
+                }
 
-                        case nameof(UserResource.Email):
-                            _tenantValidation.ValidateEmail(resource.Email);
-                            tenant.SetEmail(resource.Email);
-                            break;
-                    }
+                if (resource.Phone != null && resource.Phone != tenant.Phone)
+                {
+                    _tenantValidation.ValidatePhone(resource.Phone);
+                    tenant.SetPhone(resource.Phone);
+                }
+
+                if (resource.Email != null && resource.Email != tenant.Email)
+                {
+                    _tenantValidation.ValidatePhone(resource.Email);
+                    tenant.SetEmail(resource.Email);
                 }
 
                 await _tenantRepository.UpdateTenantAsync(tenant);

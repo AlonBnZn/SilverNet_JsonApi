@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\services\\userresourceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\services\\userresourceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\definitions\\userresourcedeinition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\definitions\\userresourcedeinition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\controllers\\tenantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\controllers\\tenantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\authorization\\policies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\controllers\\tenantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\controllers\\tenantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\data\\commanddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\data\\commanddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -65,10 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\services\\userresourceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\services\\userresourceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\validations\\uservalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,16 +95,8 @@
       "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\validations\\iuservalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D465AD56-DD48-4A00-B312-6FC860657B7F}|SilverNetJsonApiAssignment.DAL\\SilverNetJsonApiAssignment.DAL.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvernetjsonapiassignment.dal\\entities\\tenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D465AD56-DD48-4A00-B312-6FC860657B7F}|SilverNetJsonApiAssignment.DAL\\SilverNetJsonApiAssignment.DAL.csproj|solutionrelative:silvernetjsonapiassignment.dal\\entities\\tenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvenetjsonapiassignment.api\\definitions\\userresourcedeinition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE788934-CE64-47F8-9CBC-0CD807B787EF}|SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API.csproj|solutionrelative:silvenetjsonapiassignment.api\\definitions\\userresourcedeinition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D465AD56-DD48-4A00-B312-6FC860657B7F}|SilverNetJsonApiAssignment.DAL\\SilverNetJsonApiAssignment.DAL.csproj|c:\\users\\alonb\\onedrive\\desktop\\projects\\ahron-project\\silvenetjsonapiassignment.api\\silvernetjsonapiassignment.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -122,7 +122,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 227,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -154,7 +154,82 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Program.cs",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Program.cs",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Program.cs",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Program.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAiwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T11:52:39.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TenantController.cs",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\TenantController.cs",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Controllers\\TenantController.cs",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\TenantController.cs",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Controllers\\TenantController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T12:13:59.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowBUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T12:15:32.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TenantResource.cs",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Resources\\TenantResource.cs",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Resources\\TenantResource.cs",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Resources\\TenantResource.cs",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Resources\\TenantResource.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA3wB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T11:31:41.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserResource.cs",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Resources\\UserResource.cs",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Resources\\UserResource.cs",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Resources\\UserResource.cs",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Resources\\UserResource.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwCEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T13:02:32.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserResourceDeinition.cs",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Definitions\\UserResourceDeinition.cs",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Definitions\\UserResourceDeinition.cs",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Definitions\\UserResourceDeinition.cs",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Definitions\\UserResourceDeinition.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T13:17:43.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Controllers\\AuthController.cs",
@@ -167,59 +242,20 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserResourceService.cs",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Services\\UserResourceService.cs",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Services\\UserResourceService.cs",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Services\\UserResourceService.cs*",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Services\\UserResourceService.cs*",
+              "ViewState": "AgIAAEwAAAAAAAAAAAA3wGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T13:10:17.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UserResource.cs",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Resources\\UserResource.cs",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Resources\\UserResource.cs",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Resources\\UserResource.cs",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Resources\\UserResource.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAwCEAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T13:02:32.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TenantResource.cs",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Resources\\TenantResource.cs",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Resources\\TenantResource.cs",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Resources\\TenantResource.cs",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Resources\\TenantResource.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA3wB8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T11:31:41.464Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\appsettings.json",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\appsettings.json",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-30T11:49:59.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Dtos\\LoginRequestDto.cs",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Dtos\\LoginRequestDto.cs",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Dtos\\LoginRequestDto.cs",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Dtos\\LoginRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T16:09:19.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "AuthorizationHandler.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Authorization\\AuthorizationHandler.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Authorization\\AuthorizationHandler.cs",
@@ -227,25 +263,35 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Authorization\\AuthorizationHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T16:09:50.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Program.cs",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Program.cs",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Program.cs",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Program.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAiwDYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T11:52:39.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T16:09:50.439Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "LoginRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Dtos\\LoginRequestDto.cs",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Dtos\\LoginRequestDto.cs",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Dtos\\LoginRequestDto.cs",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Dtos\\LoginRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T16:09:19.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\appsettings.json",
+              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\appsettings.json",
+              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-30T11:49:59.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Services\\IAuthService.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Services\\IAuthService.cs",
@@ -253,12 +299,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Services\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T16:13:21.793Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T16:13:21.793Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Services\\AuthService.cs",
@@ -266,12 +311,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Services\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T16:13:22.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T16:13:22.479Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "TenantResourceService.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Services\\TenantResourceService.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Services\\TenantResourceService.cs",
@@ -279,12 +323,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Services\\TenantResourceService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T12:12:16.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T12:12:16.653Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Requirements.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Authorization\\Requirements.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Authorization\\Requirements.cs",
@@ -292,12 +335,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Authorization\\Requirements.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T16:10:03.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T16:10:03.46Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Policies.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Authorization\\Policies.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Authorization\\Policies.cs",
@@ -305,8 +347,7 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Authorization\\Policies.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T16:09:59.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T16:09:59.767Z"
             },
             {
               "$type": "Document",
@@ -318,38 +359,11 @@
               "RelativeToolTip": "SilverNetJsonApiAssignment.DAL\\Repositories\\UserRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T12:58:05.68Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T12:58:05.68Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TenantController.cs",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\TenantController.cs",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Controllers\\TenantController.cs",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\TenantController.cs",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Controllers\\TenantController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T12:13:59.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UserResourceDeinition.cs",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Definitions\\UserResourceDeinition.cs",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Definitions\\UserResourceDeinition.cs",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Definitions\\UserResourceDeinition.cs",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Definitions\\UserResourceDeinition.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAQwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T13:17:43.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "TenantMapper.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Mappers\\TenantMapper.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Mappers\\TenantMapper.cs",
@@ -357,25 +371,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Mappers\\TenantMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T15:43:45.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T15:43:45.506Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UserResourceService.cs",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Services\\UserResourceService.cs",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Services\\UserResourceService.cs",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Services\\UserResourceService.cs",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Services\\UserResourceService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAmwB0AAAA2AgAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T13:10:17.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Tenant.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SilverNetJsonApiAssignment.DAL\\Entities\\Tenant.cs",
               "RelativeDocumentMoniker": "SilverNetJsonApiAssignment.DAL\\Entities\\Tenant.cs",
@@ -383,25 +383,11 @@
               "RelativeToolTip": "SilverNetJsonApiAssignment.DAL\\Entities\\Tenant.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAiwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T14:54:04.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T14:54:04.094Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Controllers\\UserController.cs",
-              "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Controllers\\UserController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAA0wCcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T12:15:32.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "CommandDBContext.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Data\\CommandDBContext.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Data\\CommandDBContext.cs",
@@ -409,12 +395,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Data\\CommandDBContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T14:24:04.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T14:24:04.707Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "UserValidation.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Validations\\UserValidation.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Validations\\UserValidation.cs",
@@ -422,12 +407,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Validations\\UserValidation.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwB4AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T15:37:24.28Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T15:37:24.28Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "UserMapper.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Mappers\\UserMapper.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Mappers\\UserMapper.cs",
@@ -435,12 +419,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Mappers\\UserMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T15:44:02.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T15:44:02.603Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ITenantValidation.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Validations\\ITenantValidation.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Validations\\ITenantValidation.cs",
@@ -448,12 +431,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Validations\\ITenantValidation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T15:57:57.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T15:57:57.644Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "TenantValidation.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Validations\\TenantValidation.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Validations\\TenantValidation.cs",
@@ -461,12 +443,11 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Validations\\TenantValidation.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwBcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T15:58:26.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T15:58:26.844Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "IUserValidation.cs",
               "DocumentMoniker": "C:\\Users\\AlonB\\OneDrive\\Desktop\\Projects\\Ahron-Project\\SIlveNetJsonApiAssignment.API\\SIlveNetJsonApiAssignment.API\\Validations\\IUserValidation.cs",
               "RelativeDocumentMoniker": "SIlveNetJsonApiAssignment.API\\Validations\\IUserValidation.cs",
@@ -474,8 +455,7 @@
               "RelativeToolTip": "SIlveNetJsonApiAssignment.API\\Validations\\IUserValidation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T15:37:16.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T15:37:16.42Z"
             },
             {
               "$type": "Document",
@@ -487,8 +467,7 @@
               "RelativeToolTip": "SilverNetJsonApiAssignment.DAL\\Entities\\User.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAYwBUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T12:24:30.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T12:24:30.837Z"
             },
             {
               "$type": "Document",
@@ -500,8 +479,7 @@
               "RelativeToolTip": "SilverNetJsonApiAssignment.DAL\\Repositories\\IUserRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAwwA4AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T12:58:37.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T12:58:37.483Z"
             },
             {
               "$type": "Document",
@@ -513,8 +491,7 @@
               "RelativeToolTip": "SilverNetJsonApiAssignment.DAL\\Repositories\\TenantRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T13:02:01.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T13:02:01.214Z"
             }
           ]
         }

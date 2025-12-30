@@ -155,3 +155,4 @@ C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment
 C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SIlveNetJsonApiAssignment.API\obj\Debug\net8.0\ref\SIlveNetJsonApiAssignment.API.dll
 C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SIlveNetJsonApiAssignment.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SIlveNetJsonApiAssignment.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SIlveNetJsonApiAssignment.API\obj\Debug\net8.0\SIlveNetJsonApiAssignment.API.sourcelink.json

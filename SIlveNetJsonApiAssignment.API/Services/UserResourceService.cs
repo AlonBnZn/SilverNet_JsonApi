@@ -24,7 +24,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        private readonly ITargetedFields _targetedFields;
 
 
         public UserResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<UserResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, IUserRepository userRepository, ITenantRepository tenantRepository, ILogger<UserResourceService> logger, IUserValidation userValidation, IHttpContextAccessor httpContextAccessor, ITargetedFields targetedFields) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
@@ -39,7 +38,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
             _httpContextAccessor = httpContextAccessor;
 
-            _targetedFields = targetedFields;
         }
 
         public override async Task<UserResource> CreateAsync(UserResource resource, CancellationToken cancellationToken)
@@ -90,35 +88,35 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
                     throw new Exception("User not found");
                 }
-                foreach (var attr in _targetedFields.Attributes)
+
+                if (resource.FirstName != null && resource.FirstName != user.FirstName)
                 {
-                    switch (attr.Property.Name)
-                    {
-                        case nameof(UserResource.FirstName):
-                            _userValidation.ValidateFirstName(resource.FirstName);
-                            user.SetFirstName(resource.FirstName);
-                            break;
+                    _userValidation.ValidateFirstName(resource.FirstName);
+                    user.SetFirstName(resource.FirstName);
+                }
 
-                        case nameof(UserResource.LastName):
-                            _userValidation.ValidateLastName(resource.LastName);
-                            user.SetLastName(resource.LastName);
-                            break;
+                if (resource.LastName != null && resource.LastName != user.LastName)
+                {
+                    _userValidation.ValidateLastName(resource.LastName);
+                    user.SetLastName(resource.LastName);
+                }
 
-                        case nameof(UserResource.Phone):
-                            _userValidation.ValidatePhone(resource.Phone);
-                            user.SetPhone(resource.Phone);
-                            break;
+                if (resource.Phone != null && resource.Phone != user.Phone)
+                {
+                    _userValidation.ValidatePhone(resource.Phone);
+                    user.SetPhone(resource.Phone);
+                }
 
-                        case nameof(UserResource.Email):
-                            _userValidation.ValidateEmail(resource.Email);
-                            user.SetEmail(resource.Email);
-                            break;
+                if (resource.Email != null && resource.Email != user.Email)
+                {
+                    _userValidation.ValidateEmail(resource.Email);
+                    user.SetEmail(resource.Email);
+                }
 
-                        case nameof(UserResource.IdNumber):
-                            _userValidation.ValidateIdNumber(resource.IdNumber);
-                            user.SetIdNumber(resource.IdNumber);
-                            break;
-                    }
+                if (resource.IdNumber != null && resource.IdNumber != user.IdNumber)
+                {
+                    _userValidation.ValidateIdNumber(resource.IdNumber);
+                    user.SetIdNumber(resource.IdNumber);
                 }
 
                 await _userRepository.UpdateUserAsync(user);
