@@ -14,6 +14,8 @@
 
         public List<User> Users { get; set; }
 
+        private Tenant() { }
+
         public Tenant(string name, string email, string phone)
         {
             this.Name = name;

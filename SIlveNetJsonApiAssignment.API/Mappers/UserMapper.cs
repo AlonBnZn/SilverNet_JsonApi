@@ -9,10 +9,5 @@ namespace SilverNetJsonApiAssignment.API.BLL.Mappers
         {
             return new UserResource(user.Id, user.FirstName, user.LastName, user.Phone, user.Email, user.IdNumber, user.CreationDate, user.Tenant!.ToResource());
         }
-
-        public static List<UserResource> ToResourceList(this IEnumerable<User> users)
-        {
-            return users.Select(u => u.ToResource()).ToList();
-        }
     }
 }

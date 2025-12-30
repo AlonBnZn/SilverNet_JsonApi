@@ -24,8 +24,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-
-
         public UserResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<UserResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, IUserRepository userRepository, ITenantRepository tenantRepository, ILogger<UserResourceService> logger, IUserValidation userValidation, IHttpContextAccessor httpContextAccessor, ITargetedFields targetedFields) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
         {
             _logger = logger;
@@ -37,7 +35,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
             _userValidation = userValidation;
 
             _httpContextAccessor = httpContextAccessor;
-
         }
 
         public override async Task<UserResource> CreateAsync(UserResource resource, CancellationToken cancellationToken)
@@ -58,9 +55,7 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
                 _userValidation.ValidateUser(resource.FirstName, resource.LastName, resource.Phone, resource.Email, resource.IdNumber);
 
-                User user = new User(resource.FirstName, resource.LastName, resource.Phone, resource.Email, resource.IdNumber);
-
-                user.SetTenant(tenant);
+                User user = new User(resource.FirstName, resource.LastName, resource.Phone, resource.Email, resource.IdNumber, tenant);
 
                 await _userRepository.CreateUserAsync(user);
 
@@ -71,6 +66,7 @@ namespace SIlveNetJsonApiAssignment.API.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error creating user");
+
                 throw new Exception("Error creating user", ex);
             }
         }
@@ -146,11 +142,7 @@ namespace SIlveNetJsonApiAssignment.API.Services
                 _logger.LogError("Deleting user failed :" + ex.Message);
 
                 throw new Exception("Error Deleting user", ex);
-
             }
         }
-
-
     }
 }
-

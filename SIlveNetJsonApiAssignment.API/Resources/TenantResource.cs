@@ -17,10 +17,7 @@ namespace SIlveNetJsonApiAssignment.API.Resources
 
         [HasMany] public List<UserResource> Users { get; set; } = new List<UserResource>();
 
-        public TenantResource()
-        {
-
-        }
+        public TenantResource() { }
 
         public TenantResource(long id, string name, string email, string phone, DateTime creationDate)
         {

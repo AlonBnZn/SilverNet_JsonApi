@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SIlveNetJsonApiAssignment.API.Resources;
 using SilverNetJsonApiAssignment.DAL.Configurations;
-using SilverNetJsonApiAssignment.DAL.Entities;
 
-namespace SilverNetJsonApiAssignment.API.Data
+namespace SIlveNetJsonApiAssignment.API.Data
 {
-    public class CommandDbContext : DbContext
+    public class ReadDbContext : DbContext
     {
-        public CommandDbContext(DbContextOptions<CommandDbContext> options) : base(options) { }
+        public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options) { }
 
-        public DbSet<Tenant> Tenants { get; set; } = null!;
+        public DbSet<TenantResource> Tenants { get; set; } = null!;
 
-        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<UserResource> Users { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -10,7 +10,6 @@ using SilverNetJsonApiAssignment.API.Authorization;
 namespace SIlveNetJsonApiAssignment.API.Controllers
 {
     [DisableRoutingConvention]
-    [ApiController]
     [Route("api/v1")]
     public class UserController : BaseJsonApiController<UserResource, long>
     {

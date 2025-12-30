@@ -15,7 +15,6 @@ namespace SIlveNetJsonApiAssignment.API.Definitions
             _logger = logger;
         }
 
-
         public override FilterExpression? OnApplyFilter(FilterExpression? existingFilter)
         {
             var tenantIdString = _httpContextAccessor.HttpContext!.Request.RouteValues["tenantId"]?.ToString();
@@ -40,7 +39,6 @@ namespace SIlveNetJsonApiAssignment.API.Definitions
                 ? (FilterExpression)tenantFilter
                 : new LogicalExpression(LogicalOperator.And,
                     new[] { tenantFilter, existingFilter });
-
         }
     }
 }

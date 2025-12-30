@@ -10,14 +10,11 @@ using SilverNetJsonApiAssignment.API.Authorization;
 namespace SIlveNetJsonApiAssignment.API.Controllers
 {
     [DisableRoutingConvention]
-    [ApiController]
     [Route("api/v1")]
     public class TenantController : BaseJsonApiController<TenantResource, long>
     {
-        private IResourceService<TenantResource, long> _resourceService;
         public TenantController(IJsonApiOptions options, IResourceGraph resourceGraph, ILoggerFactory loggerFactory, IResourceService<TenantResource, long> resourceService) : base(options, resourceGraph, loggerFactory, resourceService)
         {
-            _resourceService = resourceService;
         }
 
         [HttpGet("tenants")]

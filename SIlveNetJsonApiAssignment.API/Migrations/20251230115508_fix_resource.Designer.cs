@@ -11,7 +11,7 @@ using SilverNetJsonApiAssignment.API.Data;
 
 namespace SIlveNetJsonApiAssignment.API.Migrations
 {
-    [DbContext(typeof(CommandDBContext))]
+    [DbContext(typeof(CommandDbContext))]
     [Migration("20251230115508_fix_resource")]
     partial class fix_resource
     {

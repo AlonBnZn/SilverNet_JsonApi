@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using SIlveNetJsonApiAssignment.API.Data;
 using SIlveNetJsonApiAssignment.API.Definitions;
 using SIlveNetJsonApiAssignment.API.Services;
 using SilverNetJsonApiAssignment.API.Authorization;
@@ -19,10 +20,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SilverNetJsonApiAssignmentContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDbContext<CommandDBContext>(options =>
+builder.Services.AddDbContext<CommandDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddJsonApi<CommandDBContext>(options =>
+builder.Services.AddDbContext<ReadDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddJsonApi<ReadDbContext>(options =>
 {
     options.UseRelativeLinks = true;
     options.IncludeTotalResourceCount = true;
@@ -54,6 +58,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+
 var secretKey = jwtSettings["SecretKey"];
 
 builder.Services.AddAuthentication(options =>
@@ -86,7 +91,6 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddSingleton<IAuthorizationHandler, AuthorizationHandler>();
 
-
 var app = builder.Build();
 
 app.UseRouting();
@@ -96,7 +100,6 @@ app.UseJsonApi();
 app.UseAuthentication();
 
 app.UseAuthorization();
-
 
 app.MapControllers();
 

@@ -14,25 +14,19 @@ namespace SIlveNetJsonApiAssignment.API.Services
 {
     public class TenantResourceService : JsonApiResourceService<TenantResource, long>
     {
-
         private ITenantRepository _tenantRepository;
 
         private ILogger<TenantResourceService> _logger;
 
         private ITenantValidation _tenantValidation;
 
-        private readonly ITargetedFields _targetedFields;
-
-
-        public TenantResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<TenantResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, ITenantRepository tenantRepository, ILogger<TenantResourceService> logger, ITenantValidation tenantValidation, ITargetedFields targetedFields) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
+        public TenantResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<TenantResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, ITenantRepository tenantRepository, ILogger<TenantResourceService> logger, ITenantValidation tenantValidation) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
         {
             _logger = logger;
 
             _tenantRepository = tenantRepository;
 
             _tenantValidation = tenantValidation;
-
-            _targetedFields = targetedFields;
         }
 
         public override async Task<TenantResource?> CreateAsync(TenantResource resource, CancellationToken cancellationToken)
@@ -54,6 +48,7 @@ namespace SIlveNetJsonApiAssignment.API.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error creating tenant");
+
                 throw new Exception("Error creating tenant", ex);
             }
         }
@@ -77,7 +72,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
                 if (resource.Name != null && resource.Name != tenant.Name)
                 {
-
                     _tenantValidation.ValidateName(resource.Name);
                     tenant.SetName(resource.Name);
                 }
@@ -121,7 +115,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
                 _logger.LogError("Deleting tenant failed :" + ex.Message);
 
                 throw new Exception("Error Deleting tenant", ex);
-
             }
         }
     }

@@ -10,7 +10,7 @@ using SilverNetJsonApiAssignment.API.Data;
 
 namespace SIlveNetJsonApiAssignment.API.Migrations
 {
-    [DbContext(typeof(CommandDBContext))]
+    [DbContext(typeof(CommandDbContext))]
     partial class CommandDBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

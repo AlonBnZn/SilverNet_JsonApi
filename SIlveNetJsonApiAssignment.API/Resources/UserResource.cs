@@ -21,12 +21,10 @@ namespace SIlveNetJsonApiAssignment.API.Resources
 
         [HasOne] public TenantResource? Tenant { get; set; } = null!;
 
-        public UserResource()
-        {
+        public UserResource() { }
 
-        }
         public UserResource(long id, string firstName, string lastName, string phone,
-                           string email, string idNumber, DateTime creationDate, TenantResource? tenant = null)
+                           string email, string idNumber, DateTime creationDate, TenantResource tenant)
         {
             Id = id;
             FirstName = firstName;

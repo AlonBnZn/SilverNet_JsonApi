@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace SilverNetJsonApiAssignment.DAL.Entities
+﻿namespace SilverNetJsonApiAssignment.DAL.Entities
 {
     public class User
     {
@@ -18,10 +16,11 @@ namespace SilverNetJsonApiAssignment.DAL.Entities
 
         public DateTime CreationDate { get; private set; }
 
-        [JsonIgnore]
         public Tenant Tenant { get; private set; }
 
-        public User(string firstName, string lastName, string phone, string email, string idNumber)
+        private User() { }
+
+        public User(string firstName, string lastName, string phone, string email, string idNumber, Tenant tenant)
         {
             this.FirstName = firstName;
 
@@ -32,6 +31,8 @@ namespace SilverNetJsonApiAssignment.DAL.Entities
             this.Email = email;
 
             this.IdNumber = idNumber;
+
+            this.Tenant = tenant;
 
             this.CreationDate = DateTime.UtcNow;
         }

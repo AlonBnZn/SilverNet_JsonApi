@@ -42,8 +42,7 @@ namespace SilverNetJsonApiAssignment.DAL.Repositories
 
         public async Task<Tenant?> GetTenantByIdAsync(long tenantId)
         {
-            Tenant? tenant = await _DBContext.Tenants
-      .FirstOrDefaultAsync(t => t.Id == tenantId);
+            Tenant? tenant = await _DBContext.Tenants.FirstOrDefaultAsync(t => t.Id == tenantId);
 
             if (tenant is null)
             {
