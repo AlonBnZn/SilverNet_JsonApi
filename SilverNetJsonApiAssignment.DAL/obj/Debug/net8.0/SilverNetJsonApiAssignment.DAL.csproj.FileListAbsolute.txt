@@ -1,0 +1,14 @@
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\bin\Debug\net8.0\SilverNetJsonApiAssignment.DAL.deps.json
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\bin\Debug\net8.0\SilverNetJsonApiAssignment.DAL.runtimeconfig.json
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\bin\Debug\net8.0\SilverNetJsonApiAssignment.DAL.dll
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\bin\Debug\net8.0\SilverNetJsonApiAssignment.DAL.pdb
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.DAL.csproj.AssemblyReference.cache
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.DAL.AssemblyInfoInputs.cache
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.DAL.AssemblyInfo.cs
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.DAL.csproj.CoreCompileInputs.cache
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.DAL.dll
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\refint\SilverNetJsonApiAssignment.DAL.dll
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.DAL.pdb
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.DAL.genruntimeconfig.cache
+C:\Users\AlonB\OneDrive\Desktop\Projects\Ahron-Project\SIlveNetJsonApiAssignment.API\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\ref\SilverNetJsonApiAssignment.DAL.dll
