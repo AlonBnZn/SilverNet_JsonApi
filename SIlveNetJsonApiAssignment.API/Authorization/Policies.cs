@@ -1,4 +1,4 @@
-﻿namespace SilverNetJsonApiAssignment.API.Authorization
+﻿namespace SilveNetJsonApiAssignment.Service.Authorization
 {
     public class Policies
     {

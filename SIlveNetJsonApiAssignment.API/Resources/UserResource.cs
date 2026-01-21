@@ -1,39 +1,49 @@
 ﻿using JsonApiDotNetCore.Controllers;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Resources.Annotations;
+using SilveNetJsonApiAssignment.Service.ResourceValidations;
 
-namespace SIlveNetJsonApiAssignment.API.Resources
+namespace SilveNetJsonApiAssignment.Service.Resources
 {
-    [Resource(GenerateControllerEndpoints = JsonApiEndpoints.None)]
+    [Resource(PublicName = "users",
+              GenerateControllerEndpoints = JsonApiEndpoints.None)]
     public class UserResource : Identifiable<long>
     {
-        [Attr] public string FirstName { get; private set; } = null!;
+        [Attr(PublicName = "firstName",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
+        [StringValidationAttribute(10,"firstName")]
+        public string FirstName { get; protected set; } = null!;
 
-        [Attr] public string LastName { get; private set; } = null!;
+        [Attr(PublicName = "lastName",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
+        [StringValidationAttribute(10, "lastName")]
+        public string LastName { get; protected set; } = null!;
 
-        [Attr] public string Email { get; private set; } = null!;
+        [Attr(PublicName = "email",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
+        [EmailValidationAttribute]
+        [StringValidationAttribute(50, "phone")]
+        public string Email { get; protected set; } = null!;
 
-        [Attr] public string Phone { get; private set; } = null!;
+        [Attr(PublicName = "phone",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
+        [PhoneValidationAttribute]
+        [StringValidationAttribute(12, "phone")]
+        public string Phone { get; protected set; } = null!;
 
-        [Attr] public string IdNumber { get; private set; } = null!;
+        [Attr(PublicName = "idNumber",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
+        [IdNumberValidationAttribute]
+        [StringValidationAttribute(9, "idNumber")]
+        public string IdNumber { get; protected set; } = null!;
 
-        [Attr] public DateTime CreationDate { get; private set; }
+        [Attr(PublicName = "creationDate",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView)]
+        public DateTime CreationDate { get; protected set; }
 
-        [HasOne] public TenantResource? Tenant { get; set; } = null!;
+        [HasOne] 
+        public TenantResource? Tenant { get; set; } = null!;
 
         public UserResource() { }
-
-        public UserResource(long id, string firstName, string lastName, string phone,
-                           string email, string idNumber, DateTime creationDate, TenantResource tenant)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            Phone = phone;
-            Email = email;
-            IdNumber = idNumber;
-            CreationDate = creationDate;
-            Tenant = tenant;
-        }
     }
 }

@@ -1,24 +1,24 @@
-﻿namespace SilverNetJsonApiAssignment.DAL.Entities
+﻿namespace SilverNetJsonApiAssignment.Entities
 {
     public class User
     {
-        public long Id { get; private set; }
+        public long Id { get; protected set; }
 
-        public string FirstName { get; private set; }
+        public string FirstName { get; protected set; }
 
-        public string LastName { get; private set; }
+        public string LastName { get; protected set; }
 
-        public string Phone { get; private set; }
+        public string Phone { get; protected set; }
 
-        public string Email { get; private set; }
+        public string Email { get; protected set; }
 
-        public string IdNumber { get; private set; }
+        public string IdNumber { get; protected set; }
 
-        public DateTime CreationDate { get; private set; }
+        public DateTime CreationDate { get; protected set; }
 
-        public Tenant Tenant { get; private set; }
+        public Tenant Tenant { get; protected set; }
 
-        private User() { }
+        protected User() { }
 
         public User(string firstName, string lastName, string phone, string email, string idNumber, Tenant tenant)
         {

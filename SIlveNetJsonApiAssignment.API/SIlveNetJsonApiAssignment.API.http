@@ -1,6 +1,6 @@
-@SIlveNetJsonApiAssignment.API_HostAddress = http://localhost:5100
+@SilveNetJsonApiAssignment.Service_HostAddress = http://localhost:5100
 
-GET {{SIlveNetJsonApiAssignment.API_HostAddress}}/weatherforecast/
+GET {{SilveNetJsonApiAssignment.Service_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

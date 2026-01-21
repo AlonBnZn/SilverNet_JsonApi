@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SilverNetJsonApiAssignment.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a752becf5e221e73ea4d6dba7badba3e74f5d079")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b5fdd10d51fe041169b9ca2c8c3bead98b054a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SilverNetJsonApiAssignment.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SilverNetJsonApiAssignment.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,4 @@
-﻿namespace SilverNetJsonApiAssignment.API.DTOs
+﻿namespace SilveNetJsonApiAssignment.Service.DTOs
 {
     public class LoginRequestDto
     {

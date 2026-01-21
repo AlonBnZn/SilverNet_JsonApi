@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SilverNetJsonApiAssignment.API.DTOs;
-using SilverNetJsonApiAssignment.API.Services;
+using SilveNetJsonApiAssignment.Service.DTOs;
+using SilveNetJsonApiAssignment.Service.Services;
 
-namespace SIlveNetJsonApiAssignment.API.Controllers
+namespace SilveNetJsonApiAssignment.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -24,6 +24,21 @@ namespace SIlveNetJsonApiAssignment.API.Controllers
             }
 
             var result = await _authService.LoginAsync(loginDto.TenantId, loginDto.UserId);
+
+            if (result == null)
+            {
+                return Unauthorized(new { message = "Invalid credentials" });
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet("register")]
+        public async Task<IActionResult> Register()
+        {
+
+
+            var result = await _authService.RegisterAsync();
 
             if (result == null)
             {

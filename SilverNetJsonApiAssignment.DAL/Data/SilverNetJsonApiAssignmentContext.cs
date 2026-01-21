@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SilverNetJsonApiAssignment.DAL.Configurations;
-using SilverNetJsonApiAssignment.DAL.Entities;
+using SilverNetJsonApiAssignment.Configurations;
+using SilverNetJsonApiAssignment.Entities;
 
-namespace SilverNetJsonApiAssignment.DAL.Data
+namespace SilverNetJsonApiAssignment.Data
 {
     public class SilverNetJsonApiAssignmentContext : DbContext
     {

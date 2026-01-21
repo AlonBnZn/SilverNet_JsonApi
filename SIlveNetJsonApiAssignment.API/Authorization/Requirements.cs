@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace SilverNetJsonApiAssignment.API.Authorization
+namespace SilveNetJsonApiAssignment.Service.Authorization
 {
     public class Requirements
     {

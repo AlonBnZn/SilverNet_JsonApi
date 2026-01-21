@@ -1,9 +1,9 @@
 ﻿using JsonApiDotNetCore.Configuration;
 using JsonApiDotNetCore.Queries.Expressions;
 using JsonApiDotNetCore.Resources;
-using SIlveNetJsonApiAssignment.API.Resources;
+using SilveNetJsonApiAssignment.Service.Resources;
 
-namespace SIlveNetJsonApiAssignment.API.Definitions
+namespace SilveNetJsonApiAssignment.Service.Definitions
 {
     public class UserResourceDeinition : JsonApiResourceDefinition<UserResource, long>
     {
@@ -19,11 +19,8 @@ namespace SIlveNetJsonApiAssignment.API.Definitions
         {
             var tenantIdString = _httpContextAccessor.HttpContext!.Request.RouteValues["tenantId"]?.ToString();
 
-            if (string.IsNullOrEmpty(tenantIdString) || !long.TryParse(tenantIdString, out var tenantId))
-            {
-                _logger.LogError("Tenant ID not found in route or invalid");
-                throw new KeyNotFoundException("Tenant ID not found in route");
-            }
+            long.TryParse(tenantIdString, out var tenantId);
+
             var tenantIdAttribute = ResourceType.Attributes
                 .Single(attr => attr.Property.Name == nameof(UserResource.Tenant.Id));
 

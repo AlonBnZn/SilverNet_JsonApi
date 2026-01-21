@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SilverNetJsonApiAssignment.DAL.Entities;
+using SilverNetJsonApiAssignment.Entities;
 
-namespace SilverNetJsonApiAssignment.DAL.Configurations
+namespace SilverNetJsonApiAssignment.Configurations
 {
     public class TenantConfiguration : IEntityTypeConfiguration<Tenant>
     {

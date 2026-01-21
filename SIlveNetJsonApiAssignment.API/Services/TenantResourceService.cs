@@ -4,13 +4,13 @@ using JsonApiDotNetCore.Queries;
 using JsonApiDotNetCore.Repositories;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Services;
-using SIlveNetJsonApiAssignment.API.Resources;
-using SilverNetJsonApiAssignment.API.BLL.Mappers;
-using SilverNetJsonApiAssignment.API.Validations;
-using SilverNetJsonApiAssignment.DAL.Entities;
-using SilverNetJsonApiAssignment.DAL.Repositories;
+using SilveNetJsonApiAssignment.Service.Resources;
+using SilveNetJsonApiAssignment.Service.Extantions;
+using SilveNetJsonApiAssignment.Service.ResourceValidations;
+using SilverNetJsonApiAssignment.Entities;
+using SilverNetJsonApiAssignment.Service.Repositories;
 
-namespace SIlveNetJsonApiAssignment.API.Services
+namespace SilveNetJsonApiAssignment.Service.Services
 {
     public class TenantResourceService : JsonApiResourceService<TenantResource, long>
     {
@@ -18,15 +18,13 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
         private ILogger<TenantResourceService> _logger;
 
-        private ITenantValidation _tenantValidation;
 
-        public TenantResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<TenantResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, ITenantRepository tenantRepository, ILogger<TenantResourceService> logger, ITenantValidation tenantValidation) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
+        public TenantResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<TenantResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, ITenantRepository tenantRepository, ILogger<TenantResourceService> logger) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
         {
             _logger = logger;
 
             _tenantRepository = tenantRepository;
 
-            _tenantValidation = tenantValidation;
         }
 
         public override async Task<TenantResource?> CreateAsync(TenantResource resource, CancellationToken cancellationToken)
@@ -35,9 +33,7 @@ namespace SIlveNetJsonApiAssignment.API.Services
             {
                 _logger.LogInformation("Creating tenant...");
 
-                _tenantValidation.ValidateTenant(resource.Name, resource.Phone, resource.Email);
-
-                Tenant tenant = new Tenant(resource.Name, resource.Phone, resource.Email);
+                Tenant tenant = new Tenant(resource.Name, resource.Email, resource.Phone);
 
                 await _tenantRepository.CreateTenantAsync(tenant);
 
@@ -59,8 +55,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
             {
                 _logger.LogInformation("Updating tenant with id: {id}", id);
 
-                _tenantValidation.ValidateTenant(resource.Name, resource.Phone, resource.Email);
-
                 Tenant? tenant = await _tenantRepository.GetTenantByIdAsync(id);
 
                 if (tenant is null)
@@ -70,21 +64,18 @@ namespace SIlveNetJsonApiAssignment.API.Services
                     throw new Exception("Tenant not found");
                 }
 
-                if (resource.Name != null && resource.Name != tenant.Name)
+                if (!resource.Name.Equals(null) && !resource.Name.Equals(tenant.Name) )
                 {
-                    _tenantValidation.ValidateName(resource.Name);
                     tenant.SetName(resource.Name);
                 }
 
-                if (resource.Phone != null && resource.Phone != tenant.Phone)
+                if (!resource.Phone.Equals(null) && !resource.Phone.Equals(tenant.Phone))
                 {
-                    _tenantValidation.ValidatePhone(resource.Phone);
                     tenant.SetPhone(resource.Phone);
                 }
 
-                if (resource.Email != null && resource.Email != tenant.Email)
+                if (!resource.Email.Equals(null)  && !resource.Email.Equals(tenant.Email))
                 {
-                    _tenantValidation.ValidatePhone(resource.Email);
                     tenant.SetEmail(resource.Email);
                 }
 

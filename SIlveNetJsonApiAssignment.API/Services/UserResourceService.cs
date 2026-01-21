@@ -4,13 +4,13 @@ using JsonApiDotNetCore.Queries;
 using JsonApiDotNetCore.Repositories;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Services;
-using SIlveNetJsonApiAssignment.API.Resources;
-using SilverNetJsonApiAssignment.API.BLL.Mappers;
-using SilverNetJsonApiAssignment.API.Validations;
-using SilverNetJsonApiAssignment.DAL.Entities;
-using SilverNetJsonApiAssignment.DAL.Repositories;
+using SilveNetJsonApiAssignment.Service.Resources;
+using SilveNetJsonApiAssignment.Service.Extantions;
+using SilveNetJsonApiAssignment.Service.ResourceValidations;
+using SilverNetJsonApiAssignment.Entities;
+using SilverNetJsonApiAssignment.Service.Repositories;
 
-namespace SIlveNetJsonApiAssignment.API.Services
+namespace SilveNetJsonApiAssignment.Service.Services
 {
     public class UserResourceService : JsonApiResourceService<UserResource, long>
     {
@@ -20,11 +20,9 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
         private ILogger<UserResourceService> _logger;
 
-        private IUserValidation _userValidation;
-
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public UserResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<UserResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, IUserRepository userRepository, ITenantRepository tenantRepository, ILogger<UserResourceService> logger, IUserValidation userValidation, IHttpContextAccessor httpContextAccessor, ITargetedFields targetedFields) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
+        public UserResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<UserResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, IUserRepository userRepository, ITenantRepository tenantRepository, ILogger<UserResourceService> logger, IHttpContextAccessor httpContextAccessor, ITargetedFields targetedFields) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
         {
             _logger = logger;
 
@@ -32,7 +30,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
 
             _tenantRepository = tenantRepository;
 
-            _userValidation = userValidation;
 
             _httpContextAccessor = httpContextAccessor;
         }
@@ -52,8 +49,6 @@ namespace SIlveNetJsonApiAssignment.API.Services
                     _logger.LogError("Tenant not found");
                     throw new Exception("Tenant not found");
                 }
-
-                _userValidation.ValidateUser(resource.FirstName, resource.LastName, resource.Phone, resource.Email, resource.IdNumber);
 
                 User user = new User(resource.FirstName, resource.LastName, resource.Phone, resource.Email, resource.IdNumber, tenant);
 
@@ -85,33 +80,28 @@ namespace SIlveNetJsonApiAssignment.API.Services
                     throw new Exception("User not found");
                 }
 
-                if (resource.FirstName != null && resource.FirstName != user.FirstName)
+                if (!resource.FirstName.Equals(null) && !resource.FirstName.Equals(user.FirstName))
                 {
-                    _userValidation.ValidateFirstName(resource.FirstName);
                     user.SetFirstName(resource.FirstName);
                 }
 
-                if (resource.LastName != null && resource.LastName != user.LastName)
+                if (!resource.LastName.Equals(null) && !resource.LastName.Equals(user.LastName))
                 {
-                    _userValidation.ValidateLastName(resource.LastName);
                     user.SetLastName(resource.LastName);
                 }
 
-                if (resource.Phone != null && resource.Phone != user.Phone)
+                if (!resource.Phone.Equals(null) && !resource.Phone.Equals(user.Phone))
                 {
-                    _userValidation.ValidatePhone(resource.Phone);
                     user.SetPhone(resource.Phone);
                 }
 
-                if (resource.Email != null && resource.Email != user.Email)
+                if (!resource.Email.Equals(null) && !resource.Email.Equals(user.Email))
                 {
-                    _userValidation.ValidateEmail(resource.Email);
                     user.SetEmail(resource.Email);
                 }
 
-                if (resource.IdNumber != null && resource.IdNumber != user.IdNumber)
+                if (!resource.IdNumber.Equals(null) && !resource.IdNumber.Equals(user.IdNumber))
                 {
-                    _userValidation.ValidateIdNumber(resource.IdNumber);
                     user.SetIdNumber(resource.IdNumber);
                 }
 

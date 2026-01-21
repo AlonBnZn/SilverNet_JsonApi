@@ -4,10 +4,10 @@ using JsonApiDotNetCore.Controllers.Annotations;
 using JsonApiDotNetCore.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SIlveNetJsonApiAssignment.API.Resources;
-using SilverNetJsonApiAssignment.API.Authorization;
+using SilveNetJsonApiAssignment.Service.Resources;
+using SilveNetJsonApiAssignment.Service.Authorization;
 
-namespace SIlveNetJsonApiAssignment.API.Controllers
+namespace SilveNetJsonApiAssignment.Service.Controllers
 {
     [DisableRoutingConvention]
     [Route("api/v1")]

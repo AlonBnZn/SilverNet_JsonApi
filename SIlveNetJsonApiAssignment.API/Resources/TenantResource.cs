@@ -1,31 +1,40 @@
 ﻿using JsonApiDotNetCore.Controllers;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Resources.Annotations;
+using SilveNetJsonApiAssignment.Service.ResourceValidations;
+using System.ComponentModel.DataAnnotations;
 
-namespace SIlveNetJsonApiAssignment.API.Resources
+namespace SilveNetJsonApiAssignment.Service.Resources
 {
-    [Resource(GenerateControllerEndpoints = JsonApiEndpoints.None)]
+    [Resource(PublicName = "tenants",
+              GenerateControllerEndpoints = JsonApiEndpoints.None)]
     public class TenantResource : Identifiable<long>
     {
-        [Attr] public string Name { get; private set; } = null!;
+        [Attr(PublicName ="name", 
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
+        [StringValidationAttribute(20, "name")]
+        public string Name { get; protected set; } = null!;
 
-        [Attr] public string Email { get; private set; } = null!;
+        [Attr(PublicName = "email",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
+        [EmailValidationAttribute]
+        [StringValidationAttribute(50, "email")]
+        public string Email { get; protected set; } = null!;
 
-        [Attr] public string Phone { get; private set; } = null!;
+        [Attr(PublicName = "phone",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
+        [PhoneValidationAttribute]
+        [StringValidationAttribute(12, "phone")]
+        public string Phone { get; protected set; } = null!;
 
-        [Attr] public DateTime CreationDate { get; private set; }
+        [Attr(PublicName = "creationDate",
+              Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView)]
+        public DateTime CreationDate { get; protected set; }
 
-        [HasMany] public List<UserResource> Users { get; set; } = new List<UserResource>();
+        [HasMany] 
+        public List<UserResource> Users { get; set; } = new List<UserResource>();
 
         public TenantResource() { }
 
-        public TenantResource(long id, string name, string email, string phone, DateTime creationDate)
-        {
-            Id = id;
-            Name = name;
-            Phone = phone;
-            Email = email;
-            CreationDate = creationDate;
-        }
     }
 }

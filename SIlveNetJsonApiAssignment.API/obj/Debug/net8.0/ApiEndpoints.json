@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "SIlveNetJsonApiAssignment.API.Controllers.AuthController",
+    "ContainingType": "SilveNetJsonApiAssignment.Service.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -9,10 +9,20 @@
     "Parameters": [
       {
         "Name": "loginDto",
-        "Type": "SilverNetJsonApiAssignment.API.DTOs.LoginRequestDto",
+        "Type": "SilveNetJsonApiAssignment.Service.DTOs.LoginRequestDto",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SilveNetJsonApiAssignment.Service.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

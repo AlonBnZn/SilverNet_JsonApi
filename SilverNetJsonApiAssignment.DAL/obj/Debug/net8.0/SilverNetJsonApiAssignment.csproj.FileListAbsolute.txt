@@ -1,0 +1,15 @@
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\bin\Debug\net8.0\SilverNetJsonApiAssignment.deps.json
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\bin\Debug\net8.0\SilverNetJsonApiAssignment.runtimeconfig.json
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\bin\Debug\net8.0\SilverNetJsonApiAssignment.dll
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\bin\Debug\net8.0\SilverNetJsonApiAssignment.pdb
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.csproj.AssemblyReference.cache
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.AssemblyInfoInputs.cache
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.AssemblyInfo.cs
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.csproj.CoreCompileInputs.cache
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.sourcelink.json
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.dll
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\refint\SilverNetJsonApiAssignment.dll
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.pdb
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\SilverNetJsonApiAssignment.genruntimeconfig.cache
+C:\Users\alonb\Documents\projects\SilverNet_JsonApi\SilverNetJsonApiAssignment.DAL\obj\Debug\net8.0\ref\SilverNetJsonApiAssignment.dll

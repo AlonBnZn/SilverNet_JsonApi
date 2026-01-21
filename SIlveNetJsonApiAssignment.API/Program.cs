@@ -2,17 +2,16 @@ using JsonApiDotNetCore.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
-using SIlveNetJsonApiAssignment.API.Data;
-using SIlveNetJsonApiAssignment.API.Definitions;
-using SIlveNetJsonApiAssignment.API.Services;
-using SilverNetJsonApiAssignment.API.Authorization;
-using SilverNetJsonApiAssignment.API.Data;
-using SilverNetJsonApiAssignment.API.Services;
-using SilverNetJsonApiAssignment.API.Validations;
-using SilverNetJsonApiAssignment.DAL.Data;
-using SilverNetJsonApiAssignment.DAL.Repositories;
+using SilveNetJsonApiAssignment.Service.Authorization;
+using SilveNetJsonApiAssignment.Service.Data;
+using SilveNetJsonApiAssignment.Service.Definitions;
+using SilveNetJsonApiAssignment.Service.Services;
+using SilveNetJsonApiAssignment.Service.ResourceValidations;
+using SilverNetJsonApiAssignment.Data;
+using SilverNetJsonApiAssignment.Service.Repositories;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,10 +22,10 @@ builder.Services.AddDbContext<SilverNetJsonApiAssignmentContext>(options =>
 builder.Services.AddDbContext<CommandDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDbContext<ReadDbContext>(options =>
+builder.Services.AddDbContext<QuaryDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddJsonApi<ReadDbContext>(options =>
+builder.Services.AddJsonApi<QuaryDbContext>(options =>
 {
     options.UseRelativeLinks = true;
     options.IncludeTotalResourceCount = true;
@@ -36,10 +35,6 @@ builder.Host.UseSerilog((context, config) =>
 {
     config.ReadFrom.Configuration(context.Configuration);
 });
-
-builder.Services.AddScoped<IUserValidation, UserValidation>();
-
-builder.Services.AddScoped<ITenantValidation, TenantValidation>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 

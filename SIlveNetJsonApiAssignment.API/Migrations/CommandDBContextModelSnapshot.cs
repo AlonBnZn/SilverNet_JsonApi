@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SilverNetJsonApiAssignment.API.Data;
+using SilveNetJsonApiAssignment.Service.Data;
 
 #nullable disable
 
-namespace SIlveNetJsonApiAssignment.API.Migrations
+namespace SilveNetJsonApiAssignment.Service.Migrations
 {
     [DbContext(typeof(CommandDbContext))]
-    partial class CommandDBContextModelSnapshot : ModelSnapshot
+    partial class CommandDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -22,76 +22,7 @@ namespace SIlveNetJsonApiAssignment.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SIlveNetJsonApiAssignment.API.Resources.TenantResource", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tenants");
-                });
-
-            modelBuilder.Entity("SIlveNetJsonApiAssignment.API.Resources.UserResource", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IdNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("TenantId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TenantId");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("SilverNetJsonApiAssignment.DAL.Entities.Tenant", b =>
+            modelBuilder.Entity("SilverNetJsonApiAssignment.Entities.Tenant", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,10 +50,10 @@ namespace SIlveNetJsonApiAssignment.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tenant");
+                    b.ToTable("Tenants");
                 });
 
-            modelBuilder.Entity("SilverNetJsonApiAssignment.DAL.Entities.User", b =>
+            modelBuilder.Entity("SilverNetJsonApiAssignment.Entities.User", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -164,12 +95,12 @@ namespace SIlveNetJsonApiAssignment.API.Migrations
 
                     b.HasIndex("TenantId");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("SIlveNetJsonApiAssignment.API.Resources.UserResource", b =>
+            modelBuilder.Entity("SilverNetJsonApiAssignment.Entities.User", b =>
                 {
-                    b.HasOne("SIlveNetJsonApiAssignment.API.Resources.TenantResource", "Tenant")
+                    b.HasOne("SilverNetJsonApiAssignment.Entities.Tenant", "Tenant")
                         .WithMany("Users")
                         .HasForeignKey("TenantId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -178,23 +109,7 @@ namespace SIlveNetJsonApiAssignment.API.Migrations
                     b.Navigation("Tenant");
                 });
 
-            modelBuilder.Entity("SilverNetJsonApiAssignment.DAL.Entities.User", b =>
-                {
-                    b.HasOne("SilverNetJsonApiAssignment.DAL.Entities.Tenant", "Tenant")
-                        .WithMany("Users")
-                        .HasForeignKey("TenantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tenant");
-                });
-
-            modelBuilder.Entity("SIlveNetJsonApiAssignment.API.Resources.TenantResource", b =>
-                {
-                    b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("SilverNetJsonApiAssignment.DAL.Entities.Tenant", b =>
+            modelBuilder.Entity("SilverNetJsonApiAssignment.Entities.Tenant", b =>
                 {
                     b.Navigation("Users");
                 });

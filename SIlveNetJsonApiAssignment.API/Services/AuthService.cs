@@ -1,11 +1,11 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using SilverNetJsonApiAssignment.DAL.Entities;
-using SilverNetJsonApiAssignment.DAL.Repositories;
+using SilverNetJsonApiAssignment.Entities;
+using SilverNetJsonApiAssignment.Service.Repositories;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace SilverNetJsonApiAssignment.API.Services
+namespace SilveNetJsonApiAssignment.Service.Services
 {
     public class AuthService : IAuthService
     {
@@ -27,6 +27,12 @@ namespace SilverNetJsonApiAssignment.API.Services
             this._tenantRepository = tenantRepository;
 
             this._configuration = configuration;
+        }
+
+        public async Task<string> RegisterAsync()
+        {
+            return GenerateJwtToken(0 ,0);
+
         }
 
         public async Task<string?> LoginAsync(long tenantId, long? userId)

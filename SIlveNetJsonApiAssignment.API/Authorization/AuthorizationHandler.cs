@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using static SilverNetJsonApiAssignment.API.Authorization.Requirements;
+using static SilveNetJsonApiAssignment.Service.Authorization.Requirements;
 
-namespace SilverNetJsonApiAssignment.API.Authorization
+namespace SilveNetJsonApiAssignment.Service.Authorization
 {
     public class AuthorizationHandler : IAuthorizationHandler
     {
