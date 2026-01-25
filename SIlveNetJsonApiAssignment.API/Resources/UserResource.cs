@@ -11,37 +11,37 @@ namespace SilveNetJsonApiAssignment.Service.Resources
     {
         [Attr(PublicName = "firstName",
               Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
-        [StringValidationAttribute(10,"firstName")]
-        public string FirstName { get; protected set; } = null!;
+        [StringValidationAttribute(10, "firstName")]
+        public string FirstName { get; set; } = null!;
 
         [Attr(PublicName = "lastName",
               Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
         [StringValidationAttribute(10, "lastName")]
-        public string LastName { get; protected set; } = null!;
+        public string LastName { get; set; } = null!;
 
         [Attr(PublicName = "email",
               Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
         [EmailValidationAttribute]
         [StringValidationAttribute(50, "phone")]
-        public string Email { get; protected set; } = null!;
+        public string Email { get; set; } = null!;
 
         [Attr(PublicName = "phone",
               Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
         [PhoneValidationAttribute]
         [StringValidationAttribute(12, "phone")]
-        public string Phone { get; protected set; } = null!;
+        public string Phone { get; set; } = null!;
 
         [Attr(PublicName = "idNumber",
               Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView | AttrCapabilities.AllowChange)]
         [IdNumberValidationAttribute]
         [StringValidationAttribute(9, "idNumber")]
-        public string IdNumber { get; protected set; } = null!;
+        public string IdNumber { get; set; } = null!;
 
         [Attr(PublicName = "creationDate",
               Capabilities = AttrCapabilities.AllowFilter | AttrCapabilities.AllowCreate | AttrCapabilities.AllowSort | AttrCapabilities.AllowView)]
-        public DateTime CreationDate { get; protected set; }
+        public DateTime CreationDate { get; set; }
 
-        [HasOne] 
+        [HasOne]
         public TenantResource? Tenant { get; set; } = null!;
 
         public UserResource() { }

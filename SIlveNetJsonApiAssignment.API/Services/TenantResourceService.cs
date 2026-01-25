@@ -4,9 +4,10 @@ using JsonApiDotNetCore.Queries;
 using JsonApiDotNetCore.Repositories;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Services;
-using SilveNetJsonApiAssignment.Service.Resources;
+using Microsoft.EntityFrameworkCore;
+using SilveNetJsonApiAssignment.Service.Data;
 using SilveNetJsonApiAssignment.Service.Extantions;
-using SilveNetJsonApiAssignment.Service.ResourceValidations;
+using SilveNetJsonApiAssignment.Service.Resources;
 using SilverNetJsonApiAssignment.Entities;
 using SilverNetJsonApiAssignment.Service.Repositories;
 
@@ -18,13 +19,15 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
         private ILogger<TenantResourceService> _logger;
 
+        private CommandDbContext _dbContext;
 
-        public TenantResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<TenantResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, ITenantRepository tenantRepository, ILogger<TenantResourceService> logger) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
+        public TenantResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<TenantResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, ITenantRepository tenantRepository, ILogger<TenantResourceService> logger, CommandDbContext dbContext) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
         {
             _logger = logger;
 
             _tenantRepository = tenantRepository;
 
+            _dbContext = dbContext;
         }
 
         public override async Task<TenantResource?> CreateAsync(TenantResource resource, CancellationToken cancellationToken)
@@ -55,7 +58,7 @@ namespace SilveNetJsonApiAssignment.Service.Services
             {
                 _logger.LogInformation("Updating tenant with id: {id}", id);
 
-                Tenant? tenant = await _tenantRepository.GetTenantByIdAsync(id);
+                Tenant? tenant = await _dbContext.Tenants.FirstOrDefaultAsync(t => t.Id.Equals(id));
 
                 if (tenant is null)
                 {
@@ -64,24 +67,22 @@ namespace SilveNetJsonApiAssignment.Service.Services
                     throw new Exception("Tenant not found");
                 }
 
-                if (!resource.Name.Equals(null) && !resource.Name.Equals(tenant.Name) )
+                if (!string.IsNullOrWhiteSpace(resource.Name) && !resource.Name.Equals(tenant.Name))
                 {
                     tenant.SetName(resource.Name);
                 }
 
-                if (!resource.Phone.Equals(null) && !resource.Phone.Equals(tenant.Phone))
+                if (!string.IsNullOrWhiteSpace(resource.Phone) && !resource.Phone.Equals(tenant.Phone))
                 {
                     tenant.SetPhone(resource.Phone);
                 }
 
-                if (!resource.Email.Equals(null)  && !resource.Email.Equals(tenant.Email))
+                if (!string.IsNullOrWhiteSpace(resource.Email) && !resource.Email.Equals(tenant.Email))
                 {
                     tenant.SetEmail(resource.Email);
                 }
 
-                await _tenantRepository.UpdateTenantAsync(tenant);
-
-                return tenant.ToResource();
+                await _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -89,6 +90,8 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
                 throw new Exception("Error updating tenant", ex);
             }
+
+            return null;
         }
 
         public override async Task DeleteAsync(long id, CancellationToken cancellationToken)

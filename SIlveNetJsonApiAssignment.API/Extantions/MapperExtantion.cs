@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using Humanizer.Localisation;
-using SilveNetJsonApiAssignment.Service.Migrations;
 using SilveNetJsonApiAssignment.Service.Resources;
 using SilverNetJsonApiAssignment.Entities;
 
@@ -24,6 +22,7 @@ namespace SilveNetJsonApiAssignment.Service.Extantions
         {
             var mapperConfiguration = new MapperConfiguration(cfg =>
             {
+                cfg.CreateMap<Tenant, TenantResource>();
                 cfg.CreateMap<User, UserResource>();
             });
 

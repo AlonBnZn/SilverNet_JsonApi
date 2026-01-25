@@ -5,9 +5,9 @@ using SilverNetJsonApiAssignment.Configurations;
 
 namespace SilveNetJsonApiAssignment.Service.Data
 {
-    public class QuaryDbContext : DbContext
+    public class QueryDbContext : DbContext
     {
-        public QuaryDbContext(DbContextOptions<QuaryDbContext> options) : base(options) { }
+        public QueryDbContext(DbContextOptions<QueryDbContext> options) : base(options) { }
 
         public DbSet<TenantResource> Tenants { get; set; } = null!;
 

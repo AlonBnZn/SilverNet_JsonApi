@@ -1,6 +1,7 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using SilveNetJsonApiAssignment.Service.Data;
 using SilverNetJsonApiAssignment.Entities;
-using SilverNetJsonApiAssignment.Service.Repositories;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -11,43 +12,38 @@ namespace SilveNetJsonApiAssignment.Service.Services
     {
         private readonly ILogger<AuthService> _logger;
 
-        private readonly IUserRepository _userRepository;
-
-        private readonly ITenantRepository _tenantRepository;
-
         private readonly IConfiguration _configuration;
 
+        private CommandDbContext _dbContext;
 
-        public AuthService(ILogger<AuthService> logger, IUserRepository userRepository, ITenantRepository tenantRepository, IConfiguration configuration)
+        public AuthService(ILogger<AuthService> logger, IConfiguration configuration, CommandDbContext dbContext)
         {
-            this._logger = logger;
+            _logger = logger;
 
-            this._userRepository = userRepository;
+            _configuration = configuration;
 
-            this._tenantRepository = tenantRepository;
-
-            this._configuration = configuration;
+            _dbContext = dbContext;
         }
 
         public async Task<string> RegisterAsync()
         {
-            return GenerateJwtToken(0 ,0);
-
+            return GenerateJwtToken(0, 0);
         }
 
         public async Task<string?> LoginAsync(long tenantId, long? userId)
         {
             if (userId is not null)
             {
-                Tenant? tenant = await _tenantRepository.GetTenantByIdAsync(tenantId);
+                Tenant? tenant = await _dbContext.Tenants.FirstOrDefaultAsync(t => t.Id.Equals(tenantId));
 
                 if (tenant is null)
                 {
                     _logger.LogError("Tenant with id {TenantId} not found", tenantId);
+
                     throw new Exception($"Tenant with id {tenantId} not found");
                 }
 
-                User? user = await _userRepository.GetUserByIdAsync(userId!.Value);
+                User? user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id.Equals(userId));
 
                 if (user is null)
                 {
@@ -58,10 +54,12 @@ namespace SilveNetJsonApiAssignment.Service.Services
             }
             else
             {
-                Tenant? tenant = await _tenantRepository.GetTenantByIdAsync(tenantId);
+                Tenant? tenant = await _dbContext.Tenants.FirstOrDefaultAsync(t => t.Id.Equals(tenantId));
+
                 if (tenant is null)
                 {
                     _logger.LogError("Tenant with id {TenantId} not found", tenantId);
+
                     throw new Exception($"Tenant with id {tenantId} not found");
                 }
             }

@@ -4,13 +4,16 @@ using JsonApiDotNetCore.Controllers.Annotations;
 using JsonApiDotNetCore.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SilveNetJsonApiAssignment.Service.Resources;
 using SilveNetJsonApiAssignment.Service.Authorization;
+using SilveNetJsonApiAssignment.Service.Resources;
 
 namespace SilveNetJsonApiAssignment.Service.Controllers
 {
     [DisableRoutingConvention]
     [Route("api/v1")]
+    [Consumes("application/vnd.api+json")]
+    [Produces("application/vnd.api+json")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class UserController : BaseJsonApiController<UserResource, long>
     {
         public UserController(IJsonApiOptions options, IResourceGraph resourceGraph, ILoggerFactory loggerFactory, IResourceService<UserResource, long> resourceService) : base(options, resourceGraph, loggerFactory, resourceService)

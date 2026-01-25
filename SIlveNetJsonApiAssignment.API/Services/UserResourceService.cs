@@ -1,12 +1,15 @@
 ﻿using JsonApiDotNetCore.Configuration;
+using JsonApiDotNetCore.Errors;
 using JsonApiDotNetCore.Middleware;
 using JsonApiDotNetCore.Queries;
 using JsonApiDotNetCore.Repositories;
 using JsonApiDotNetCore.Resources;
+using JsonApiDotNetCore.Serialization.Objects;
 using JsonApiDotNetCore.Services;
-using SilveNetJsonApiAssignment.Service.Resources;
+using Microsoft.EntityFrameworkCore;
+using SilveNetJsonApiAssignment.Service.Data;
 using SilveNetJsonApiAssignment.Service.Extantions;
-using SilveNetJsonApiAssignment.Service.ResourceValidations;
+using SilveNetJsonApiAssignment.Service.Resources;
 using SilverNetJsonApiAssignment.Entities;
 using SilverNetJsonApiAssignment.Service.Repositories;
 
@@ -22,7 +25,9 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public UserResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<UserResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, IUserRepository userRepository, ITenantRepository tenantRepository, ILogger<UserResourceService> logger, IHttpContextAccessor httpContextAccessor, ITargetedFields targetedFields) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
+        private CommandDbContext _dbContext;
+
+        public UserResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<UserResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, IUserRepository userRepository, ITenantRepository tenantRepository, ILogger<UserResourceService> logger, IHttpContextAccessor httpContextAccessor, ITargetedFields targetedFields, CommandDbContext dbContext) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
         {
             _logger = logger;
 
@@ -30,11 +35,12 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
             _tenantRepository = tenantRepository;
 
-
             _httpContextAccessor = httpContextAccessor;
+
+            _dbContext = dbContext;
         }
 
-        public override async Task<UserResource> CreateAsync(UserResource resource, CancellationToken cancellationToken)
+        public override async Task<UserResource?> CreateAsync(UserResource resource, CancellationToken cancellationToken)
         {
             try
             {
@@ -42,12 +48,17 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
                 long.TryParse(_httpContextAccessor.HttpContext!.Request.RouteValues["tenantId"]?.ToString(), out long tenantId);
 
-                Tenant? tenant = await _tenantRepository.GetTenantByIdAsync(tenantId);
+                Tenant? tenant = await _dbContext.Tenants.FirstOrDefaultAsync(t => t.Id.Equals(tenantId));
 
                 if (tenant is null)
                 {
                     _logger.LogError("Tenant not found");
-                    throw new Exception("Tenant not found");
+
+                    throw new JsonApiException(new ErrorObject(System.Net.HttpStatusCode.UnprocessableEntity)
+                    {
+                        Title = "Tenant not found",
+                        Detail = $"Tenant with id {tenantId} does not exist"
+                    });
                 }
 
                 User user = new User(resource.FirstName, resource.LastName, resource.Phone, resource.Email, resource.IdNumber, tenant);
@@ -65,13 +76,13 @@ namespace SilveNetJsonApiAssignment.Service.Services
                 throw new Exception("Error creating user", ex);
             }
         }
-        public override async Task<UserResource> UpdateAsync(long id, UserResource resource, CancellationToken cancellationToken)
+        public override async Task<UserResource?> UpdateAsync(long id, UserResource resource, CancellationToken cancellationToken)
         {
             try
             {
                 _logger.LogInformation("Updating user with id: {id}", id);
 
-                User? user = await _userRepository.GetUserByIdAsync(id);
+                User? user = await _dbContext.Users.FirstOrDefaultAsync(t => t.Id.Equals(id));
 
                 if (user is null)
                 {
@@ -80,34 +91,52 @@ namespace SilveNetJsonApiAssignment.Service.Services
                     throw new Exception("User not found");
                 }
 
-                if (!resource.FirstName.Equals(null) && !resource.FirstName.Equals(user.FirstName))
+                long.TryParse(_httpContextAccessor.HttpContext!.Request.RouteValues["tenantId"]?.ToString(), out long tenantId);
+
+                Tenant? tenant = await _dbContext.Tenants.Include(t => t.Users).FirstOrDefaultAsync(t => t.Id.Equals(tenantId));
+
+                if (tenant is null)
+                {
+                    _logger.LogError("Tenant not found");
+                    throw new Exception("Tenant not found");
+                }
+
+                if (tenant.Users.FirstOrDefault(u => u.Id.Equals(user.Id)) is null)
+                {
+                    _logger.LogError("Forbidden - User does not belong to tenant");
+                    throw new JsonApiException(new ErrorObject(System.Net.HttpStatusCode.Forbidden)
+                    {
+                        Title = "Forbidden",
+                        Detail = "You do not have access to this resource"
+                    });
+                }
+
+                if (!string.IsNullOrWhiteSpace(resource.FirstName) && !resource.FirstName.Equals(user.FirstName))
                 {
                     user.SetFirstName(resource.FirstName);
                 }
 
-                if (!resource.LastName.Equals(null) && !resource.LastName.Equals(user.LastName))
+                if (!string.IsNullOrWhiteSpace(resource.LastName) && !resource.LastName.Equals(user.LastName))
                 {
                     user.SetLastName(resource.LastName);
                 }
 
-                if (!resource.Phone.Equals(null) && !resource.Phone.Equals(user.Phone))
+                if (!string.IsNullOrWhiteSpace(resource.Phone) && !resource.Phone.Equals(user.Phone))
                 {
                     user.SetPhone(resource.Phone);
                 }
 
-                if (!resource.Email.Equals(null) && !resource.Email.Equals(user.Email))
+                if (!string.IsNullOrWhiteSpace(resource.Email) && !resource.Email.Equals(user.Email))
                 {
                     user.SetEmail(resource.Email);
                 }
 
-                if (!resource.IdNumber.Equals(null) && !resource.IdNumber.Equals(user.IdNumber))
+                if (!string.IsNullOrWhiteSpace(resource.IdNumber) && !resource.IdNumber.Equals(user.IdNumber))
                 {
                     user.SetIdNumber(resource.IdNumber);
                 }
 
-                await _userRepository.UpdateUserAsync(user);
-
-                return user.ToResource();
+                await _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -115,6 +144,8 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
                 throw new Exception("Error updating user", ex);
             }
+
+            return null;
         }
 
         public override async Task DeleteAsync(long id, CancellationToken cancellationToken)
@@ -122,6 +153,26 @@ namespace SilveNetJsonApiAssignment.Service.Services
             try
             {
                 _logger.LogInformation("Deleting user...");
+
+                long.TryParse(_httpContextAccessor.HttpContext!.Request.RouteValues["tenantId"]?.ToString(), out long tenantId);
+
+                Tenant? tenant = await _dbContext.Tenants.Include(t => t.Users).FirstOrDefaultAsync(t => t.Id.Equals(tenantId));
+
+                if (tenant is null)
+                {
+                    _logger.LogError("Tenant not found");
+                    throw new Exception("Tenant not found");
+                }
+
+                if (tenant.Users.FirstOrDefault(u => u.Id.Equals(id)) is null)
+                {
+                    _logger.LogError("Forbidden - User does not belong to tenant");
+                    throw new JsonApiException(new ErrorObject(System.Net.HttpStatusCode.Forbidden)
+                    {
+                        Title = "Forbidden",
+                        Detail = "You do not have access to this resource"
+                    });
+                }
 
                 await _userRepository.DeleteUserAsync(id);
 
