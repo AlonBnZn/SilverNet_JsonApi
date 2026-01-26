@@ -1,15 +1,19 @@
 ﻿using JsonApiDotNetCore.Configuration;
+using JsonApiDotNetCore.Errors;
 using JsonApiDotNetCore.Middleware;
 using JsonApiDotNetCore.Queries;
 using JsonApiDotNetCore.Repositories;
 using JsonApiDotNetCore.Resources;
+using JsonApiDotNetCore.Serialization.Objects;
 using JsonApiDotNetCore.Services;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SilveNetJsonApiAssignment.Service.Data;
 using SilveNetJsonApiAssignment.Service.Extantions;
 using SilveNetJsonApiAssignment.Service.Resources;
 using SilverNetJsonApiAssignment.Entities;
 using SilverNetJsonApiAssignment.Service.Repositories;
+using System.Net;
 
 namespace SilveNetJsonApiAssignment.Service.Services
 {
@@ -96,16 +100,46 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
         public override async Task DeleteAsync(long id, CancellationToken cancellationToken)
         {
+
+            await using var transaction = await _dbContext.Database.BeginTransactionAsync(cancellationToken);
+
             try
             {
                 _logger.LogInformation("Deleting tenant...");
 
-                await _tenantRepository.DeleteTenantAsync(id);
+                var usersToDelete = await _dbContext.Users
+                    .Where(u => u.Tenant.Id == id)
+                    .ToListAsync(cancellationToken);
+
+                _dbContext.Users.RemoveRange(usersToDelete);
+
+                await _dbContext.SaveChangesAsync(cancellationToken);
+
+                var parameter = new SqlParameter("@TenantId", id);
+
+                var affectedRows = await _dbContext.Database.ExecuteSqlRawAsync(
+                    "EXEC DeleteTenantById @TenantId",
+                    [parameter],
+                    cancellationToken
+                );
+
+                if (affectedRows == 0)
+                {
+                    throw new JsonApiException(new ErrorObject(HttpStatusCode.NotFound)
+                    {
+                        Title = "Not Found",
+                        Detail = $"Tenant with ID {id} not found or already deleted."
+                    });
+                }
+
+                await transaction.CommitAsync(cancellationToken);
 
                 _logger.LogInformation("Finished Deleting tenant:{id}", id);
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync(cancellationToken);
+
                 _logger.LogError("Deleting tenant failed :" + ex.Message);
 
                 throw new Exception("Error Deleting tenant", ex);

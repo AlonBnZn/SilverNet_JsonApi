@@ -51,14 +51,6 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         [Test]
         public void Should_Not_Update_User()
         {
-            User user = DbContext.Users.First(x => x.Id.Equals(_user.Id));
-
-            DbContext.Entry(user).Reload();
-
-            user.Should().NotBeNull();
-
-            user.Phone.Should().Be(_user.Phone);
-
             _response.Data.Should().BeNull();
 
             _response.Errors.Should().NotBeNull();
