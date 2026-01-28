@@ -7,6 +7,7 @@ using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Serialization.Objects;
 using JsonApiDotNetCore.Services;
 using Microsoft.EntityFrameworkCore;
+using NserviceBus.Messages.Users.Event;
 using SilveNetJsonApiAssignment.Service.Data;
 using SilveNetJsonApiAssignment.Service.Extantions;
 using SilveNetJsonApiAssignment.Service.Resources;
@@ -27,7 +28,9 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
         private CommandDbContext _dbContext;
 
-        public UserResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<UserResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, IUserRepository userRepository, ITenantRepository tenantRepository, ILogger<UserResourceService> logger, IHttpContextAccessor httpContextAccessor, ITargetedFields targetedFields, CommandDbContext dbContext) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
+        private readonly IMessageSession _messageSession;
+
+        public UserResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<UserResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, IUserRepository userRepository, ITenantRepository tenantRepository, ILogger<UserResourceService> logger, IHttpContextAccessor httpContextAccessor, ITargetedFields targetedFields, CommandDbContext dbContext, IMessageSession messageSession) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
         {
             _logger = logger;
 
@@ -38,6 +41,8 @@ namespace SilveNetJsonApiAssignment.Service.Services
             _httpContextAccessor = httpContextAccessor;
 
             _dbContext = dbContext;
+
+            _messageSession = messageSession;
         }
 
         public override async Task<UserResource?> CreateAsync(UserResource resource, CancellationToken cancellationToken)
@@ -64,6 +69,12 @@ namespace SilveNetJsonApiAssignment.Service.Services
                 User user = new User(resource.FirstName, resource.LastName, resource.Phone, resource.Email, resource.IdNumber, tenant);
 
                 await _userRepository.CreateUserAsync(user);
+
+                await _messageSession.Publish<UserCreatedEvent>(m =>
+                {
+                    m.TenantId = tenant.Id;
+                    m.UserId = user.Id;
+                }).ConfigureAwait(false);
 
                 _logger.LogInformation("Finished Creating user :{userId}", user.Id);
 
@@ -175,6 +186,12 @@ namespace SilveNetJsonApiAssignment.Service.Services
                 }
 
                 await _userRepository.DeleteUserAsync(id);
+
+                await _messageSession.Publish<UserDeletedEvent>(m =>
+                {
+                    m.TenantId = tenant.Id;
+                    m.UserId = id;
+                }).ConfigureAwait(false);
 
                 _logger.LogInformation("Finished Deleting user:{id}", id);
             }

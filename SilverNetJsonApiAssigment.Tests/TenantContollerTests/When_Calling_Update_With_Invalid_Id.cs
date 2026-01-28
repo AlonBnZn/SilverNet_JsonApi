@@ -44,7 +44,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantContollerTests
         }
 
         [Test]
-        public void Should_Not_Update_Tenant()
+        public void It_Should_Not_Update_Tenant()
         {
             Tenant tenant = DbContext.Tenants.First(x => x.Id.Equals(_tenant.Id));
 

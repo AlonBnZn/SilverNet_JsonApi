@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using NServiceBus.Entities;
+using NServiceBus.Service.Entities;
 
-namespace NServiceBus.Configurations
+namespace NServiceBus.Service.Configurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {
@@ -10,7 +10,7 @@ namespace NServiceBus.Configurations
         {
             builder.HasKey(u => u.Id);
             builder.Property(u => u.Id).ValueGeneratedNever();
-            builder.Property(u => u.TenantId).IsRequired();
+            builder.HasOne(u => u.Tenant).WithMany(t => t.Users).IsRequired(true);
         }
     }
 }

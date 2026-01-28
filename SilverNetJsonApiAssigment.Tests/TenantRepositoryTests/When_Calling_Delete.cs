@@ -1,10 +1,5 @@
 ﻿using FluentAssertions;
 using SilverNetJsonApiAssignment.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SilverNetJsonApiAssigment.Tests.TenantRepositoryTests
 {
@@ -29,7 +24,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantRepositoryTests
         }
 
         [Test]
-        public void Should_Be_Deleted()
+        public void It_Should_Be_Deleted()
         {
             Tenant? tenant = DbContext.Tenants.FirstOrDefault(x => x.Id.Equals(_existingTenant.Id));
 

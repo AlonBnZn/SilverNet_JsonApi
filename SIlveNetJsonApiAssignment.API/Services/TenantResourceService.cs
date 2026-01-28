@@ -8,6 +8,7 @@ using JsonApiDotNetCore.Serialization.Objects;
 using JsonApiDotNetCore.Services;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using NserviceBus.Messages.Tenants.Commands;
 using SilveNetJsonApiAssignment.Service.Data;
 using SilveNetJsonApiAssignment.Service.Extantions;
 using SilveNetJsonApiAssignment.Service.Resources;
@@ -25,13 +26,17 @@ namespace SilveNetJsonApiAssignment.Service.Services
 
         private CommandDbContext _dbContext;
 
-        public TenantResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<TenantResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, ITenantRepository tenantRepository, ILogger<TenantResourceService> logger, CommandDbContext dbContext) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
+        private readonly IMessageSession _messageSession;
+
+        public TenantResourceService(IResourceRepositoryAccessor repositoryAccessor, IQueryLayerComposer queryLayerComposer, IPaginationContext paginationContext, IJsonApiOptions options, ILoggerFactory loggerFactory, IJsonApiRequest request, IResourceChangeTracker<TenantResource> resourceChangeTracker, IResourceDefinitionAccessor resourceDefinitionAccessor, ITenantRepository tenantRepository, ILogger<TenantResourceService> logger, CommandDbContext dbContext, IMessageSession messageSession) : base(repositoryAccessor, queryLayerComposer, paginationContext, options, loggerFactory, request, resourceChangeTracker, resourceDefinitionAccessor)
         {
             _logger = logger;
 
             _tenantRepository = tenantRepository;
 
             _dbContext = dbContext;
+
+            _messageSession = messageSession;
         }
 
         public override async Task<TenantResource?> CreateAsync(TenantResource resource, CancellationToken cancellationToken)
@@ -43,6 +48,11 @@ namespace SilveNetJsonApiAssignment.Service.Services
                 Tenant tenant = new Tenant(resource.Name, resource.Email, resource.Phone);
 
                 await _tenantRepository.CreateTenantAsync(tenant);
+
+                await _messageSession.SendLocal<CreateTenantCommand>(m =>
+                {
+                    m.TenantId = tenant.Id;
+                }).ConfigureAwait(false);
 
                 _logger.LogInformation("Finished Creating tenant :{tenantId}", tenant.Id);
 
@@ -131,6 +141,11 @@ namespace SilveNetJsonApiAssignment.Service.Services
                         Detail = $"Tenant with ID {id} not found or already deleted."
                     });
                 }
+
+                await _messageSession.SendLocal<DeleteTenantCommand>(m =>
+                {
+                    m.TenantId = id;
+                }).ConfigureAwait(false);
 
                 await transaction.CommitAsync(cancellationToken);
 

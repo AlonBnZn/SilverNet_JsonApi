@@ -34,7 +34,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantContollerTests
         }
 
         [Test]
-        public void Should_Return_UnproccessableEntity()
+        public void It_Should_Return_UnproccessableEntity()
         {
             _response.Data.Should().BeNull();
 

@@ -49,7 +49,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Not_Update_User()
+        public void It_Should_Not_Update_User()
         {
             _response.Data.Should().BeNull();
 

@@ -49,7 +49,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Update_User()
+        public void It_Should_Update_User()
         {
             User user = DbContext.Users.First(x => x.Id.Equals(_user.Id));
 

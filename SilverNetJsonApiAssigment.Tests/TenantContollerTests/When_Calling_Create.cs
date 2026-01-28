@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using JsonApiSerializer.JsonApi;
+using NserviceBus.Messages.Tenants.Commands;
 using SilveNetJsonApiAssignment.Service.Resources;
 using SilverNetJsonApiAssignment.Entities;
 
@@ -36,7 +37,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantContollerTests
         }
 
         [Test]
-        public void Should_Return_Tenant()
+        public void It_Should_Return_Tenant()
         {
             _response.Data.Should().NotBeNull();
 
@@ -48,7 +49,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantContollerTests
         }
 
         [Test]
-        public void Should_Persist_Tenant()
+        public void It_Should_Persist_Tenant()
         {
             Tenant tenant = DbContext.Tenants.First(x => x.Id.Equals(_response.Data.Id));
 
@@ -59,6 +60,16 @@ namespace SilverNetJsonApiAssigment.Tests.TenantContollerTests
             tenant.Name.Should().Be(_request.Data.Attributes.Name);
 
             tenant.Phone.Should().Be(_request.Data.Attributes.Phone);
+        }
+
+        [Test]
+        public void It_It_Should_Send_CreateTenantCommand()
+        {
+            Tenant tenant = DbContext.Tenants.First(x => x.Id.Equals(_response.Data.Id));
+
+            var sentMessage = TestableMessageSession.SentMessages.First().Message;
+
+            ((CreateTenantCommand)sentMessage).TenantId.Should().Be(tenant.Id);
         }
     }
 }

@@ -2,6 +2,7 @@
 using JsonApiSerializer.JsonApi;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NServiceBus.Testing;
 using SilveNetJsonApiAssignment.Service.Data;
 using System.Net.Http.Headers;
 using System.Text;
@@ -20,11 +21,25 @@ namespace SilverNetJsonApiAssigment.Tests
 
         protected CommandDbContext DbContext = null!;
 
-        string databaseName = "TestDb";
+        protected TestableMessageSession TestableMessageSession = null!;
 
         protected override void Given()
         {
             Factory = new TestWebApplicationFactory();
+
+            TestableMessageSession = new TestableMessageSession();
+
+            Factory = new TestWebApplicationFactory(services =>
+            {
+                var descriptor = services.SingleOrDefault(d => d.ServiceType == typeof(IMessageSession));
+
+                if (descriptor != null)
+                {
+                    services.Remove(descriptor);
+                }
+
+                services.AddSingleton<IMessageSession>(TestableMessageSession);
+            });
 
             Client = Factory.CreateClient();
 
@@ -34,6 +49,7 @@ namespace SilverNetJsonApiAssigment.Tests
             IServiceScope scope = Factory.Services.CreateScope();
 
             DbContext = scope.ServiceProvider.GetRequiredService<CommandDbContext>();
+
         }
 
         protected DocumentRoot<TResource> SendJsonApiRequest<TResource>(HttpMethod method, string url, object? requestBody = null) where TResource : class

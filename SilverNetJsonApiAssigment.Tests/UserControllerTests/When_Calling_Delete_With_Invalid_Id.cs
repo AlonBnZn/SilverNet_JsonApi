@@ -31,7 +31,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Not_Be_Deleted()
+        public void It_Should_Not_Be_Deleted()
         {
             User? user = DbContext.Users.FirstOrDefault(x => x.Id.Equals(_user.Id));
 

@@ -20,7 +20,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserRepositoryTests
         }
 
         [Test]
-        public void Should_Be_Persisted_In_Database()
+        public void It_Should_Be_Persisted_In_Database()
         {
             User user = DbContext.Users.First(x => x.Id.Equals(1));
 

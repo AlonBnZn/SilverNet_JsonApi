@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using NserviceBus.Messages.Users.Event;
 using SilveNetJsonApiAssignment.Service.Resources;
 using SilverNetJsonApiAssignment.Entities;
 
@@ -31,11 +32,21 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Be_Deleted()
+        public void It_Should_Be_Deleted()
         {
             User? user = DbContext.Users.FirstOrDefault(x => x.Id.Equals(_user.Id));
 
             user.Should().BeNull();
+        }
+
+        [Test]
+        public void It_It_Should_Publish_UserDeletedEvent()
+        {
+            var sentMessage = TestableMessageSession.PublishedMessages.First().Message;
+
+            ((UserDeletedEvent)sentMessage).UserId.Should().Be(_user.Id);
+
+            ((UserDeletedEvent)sentMessage).TenantId.Should().Be(_tenant.Id);
         }
     }
 }

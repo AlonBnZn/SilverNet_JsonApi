@@ -28,7 +28,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantContollerTests
         }
 
         [Test]
-        public void Should_Return_Tenant()
+        public void It_Should_Return_Tenant()
         {
             _response.Data.Should().NotBeNull();
 

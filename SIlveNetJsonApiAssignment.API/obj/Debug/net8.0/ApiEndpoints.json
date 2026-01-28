@@ -24,5 +24,15 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SilveNetJsonApiAssignment.Service.Controllers.WebhookController",
+    "Method": "Get",
+    "RelativePath": "api/Webhook",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

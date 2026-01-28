@@ -1,0 +1,15 @@
+{
+  "NServiceBus.MessageId": "3c5dcff0-4ec8-42e1-8890-b3de00eaa8c5",
+  "NServiceBus.MessageIntent": "Send",
+  "NServiceBus.ConversationId": "aedd6ad9-18d4-4746-b702-b3de00eaa8c6",
+  "NServiceBus.CorrelationId": "3c5dcff0-4ec8-42e1-8890-b3de00eaa8c5",
+  "NServiceBus.ReplyToAddress": "NServiceBus.Service",
+  "NServiceBus.OriginatingMachine": "ALONB-LAPTOP",
+  "NServiceBus.OriginatingEndpoint": "NServiceBus.Service",
+  "$.diagnostics.originating.hostid": "7ca7bd64280f971ce54ad770fb93e36e",
+  "NServiceBus.ContentType": "application\/json",
+  "NServiceBus.EnclosedMessageTypes": "NserviceBus.Messages.Tenants.Commands.CreateTenantCommand, NserviceBus.Messages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "NServiceBus.Version": "8.2.6",
+  "NServiceBus.TimeSent": "2026-01-26 14:14:22:190011 Z",
+  "traceparent": "00-d3dcd986780311e86dc9787d4a76fc32-318b726e8e35a26d-00"
+}

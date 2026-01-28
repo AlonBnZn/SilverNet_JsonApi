@@ -1,11 +1,5 @@
 ﻿using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using SilverNetJsonApiAssignment.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SilverNetJsonApiAssigment.Tests.UserRepositoryTests
 {
@@ -30,7 +24,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserRepositoryTests
         }
 
         [Test]
-        public void Should_Be_Deleted()
+        public void It_Should_Be_Deleted()
         {
             User? user = DbContext.Users.FirstOrDefault(x => x.Id.Equals(_existingUser.Id));
 

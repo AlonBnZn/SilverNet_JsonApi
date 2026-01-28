@@ -20,7 +20,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantRepositoryTests
         }
 
         [Test]
-        public void Should_Be_Persisted_In_Database()
+        public void It_Should_Be_Persisted_In_Database()
         {
             Tenant tenant = DbContext.Tenants.First(x => x.Id.Equals(1));
 

@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using JsonApiSerializer.JsonApi;
+using NserviceBus.Messages.Users.Event;
 using SilveNetJsonApiAssignment.Service.Resources;
 using SilverNetJsonApiAssignment.Entities;
 
@@ -46,7 +47,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Return_User()
+        public void It_Should_Return_User()
         {
             _response.Data.Should().NotBeNull();
 
@@ -62,7 +63,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Persist_User()
+        public void It_Should_Persist_User()
         {
             User user = DbContext.Users.First(x => x.Id.Equals(_response.Data.Id));
 
@@ -77,6 +78,18 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
             user.Phone.Should().Be(_request.Data.Attributes.Phone);
 
             user.IdNumber.Should().Be(_request.Data.Attributes.IdNumber);
+        }
+
+        [Test]
+        public void It_It_Should_Publish_UserCreatedEvent()
+        {
+            User user = DbContext.Users.First(x => x.Id.Equals(_response.Data.Id));
+
+            var sentMessage = TestableMessageSession.PublishedMessages.First().Message;
+
+            ((UserCreatedEvent)sentMessage).TenantId.Should().Be(_tenant.Id);
+
+            ((UserCreatedEvent)sentMessage).UserId.Should().Be(user.Id);
         }
     }
 }

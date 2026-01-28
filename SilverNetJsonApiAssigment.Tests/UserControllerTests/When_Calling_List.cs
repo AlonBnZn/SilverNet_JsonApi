@@ -34,7 +34,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Return_List()
+        public void It_Should_Return_List()
         {
             _response.Data.Should().NotBeNull();
 

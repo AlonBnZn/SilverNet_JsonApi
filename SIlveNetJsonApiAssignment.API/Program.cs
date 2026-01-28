@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using NserviceBus.Messages.Tenants.Commands;
 using Serilog;
 using SilveNetJsonApiAssignment.Service.Authorization;
 using SilveNetJsonApiAssignment.Service.Data;
@@ -31,6 +32,22 @@ public class Program
         {
             options.UseRelativeLinks = true;
             options.IncludeTotalResourceCount = true;
+        });
+
+        builder.Host.UseNServiceBus(context =>
+        {
+            var endpointConfiguration = new EndpointConfiguration("NServiceBus.Service");
+            endpointConfiguration.UseSerialization<SystemJsonSerializer>();
+
+            var transport = endpointConfiguration.UseTransport(new LearningTransport());
+
+            transport.RouteToEndpoint(typeof(CreateTenantCommand), "NServiceBus.Service");
+            transport.RouteToEndpoint(typeof(DeleteTenantCommand), "NServiceBus.Service");
+
+            //transport.RegisterPublisher(typeof(UserCreated), "NServiceBus.Service");
+            //transport.RegisterPublisher(typeof(UserDeleted), "NServiceBus.Service");
+
+            return endpointConfiguration;
         });
 
         builder.Host.UseSerilog((context, config) =>

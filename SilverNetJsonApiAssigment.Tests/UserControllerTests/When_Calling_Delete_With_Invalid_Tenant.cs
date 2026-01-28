@@ -34,7 +34,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Not_Be_Deleted()
+        public void It_Should_Not_Be_Deleted()
         {
             User? user = DbContext.Users.FirstOrDefault(x => x.Id.Equals(_user.Id));
 
@@ -42,7 +42,7 @@ namespace SilverNetJsonApiAssigment.Tests.UserControllerTests
         }
 
         [Test]
-        public void Should_Return_UnproccessableEntity()
+        public void It_Should_Return_UnproccessableEntity()
         {
             _response.Data.Should().BeNull();
 

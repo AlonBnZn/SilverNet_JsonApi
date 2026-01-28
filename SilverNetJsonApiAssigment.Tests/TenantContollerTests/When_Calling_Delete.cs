@@ -26,7 +26,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantContollerTests
 
         [Test]
         [Ignore("SQLite doesn't support stored procedures")]
-        public void Should_Be_Deleted()
+        public void It_Should_Be_Deleted()
         {
             Tenant? tenant = DbContext.Tenants.FirstOrDefault(x => x.Id.Equals(_tenant.Id));
 

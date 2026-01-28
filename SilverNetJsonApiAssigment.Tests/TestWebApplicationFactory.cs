@@ -15,6 +15,13 @@ namespace SilverNetJsonApiAssigment.Tests
     {
         private SqliteConnection _connection = null!;
 
+        private readonly Action<IServiceCollection>? _configureServices;
+
+        public TestWebApplicationFactory(Action<IServiceCollection>? configureServices = null)
+        {
+            _configureServices = configureServices;
+        }
+
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
             _connection = new SqliteConnection("DataSource=:memory:");
@@ -56,6 +63,8 @@ namespace SilverNetJsonApiAssigment.Tests
                 services.Remove(authorizationHandlerService!);
 
                 services.AddSingleton(authorizationHandlerMock.Object);
+
+                _configureServices?.Invoke(services);
             });
         }
 

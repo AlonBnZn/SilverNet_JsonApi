@@ -25,7 +25,7 @@ namespace SilverNetJsonApiAssigment.Tests.TenantContollerTests
         }
 
         [Test]
-        public void Should_Not_Be_Deleted()
+        public void It_Should_Not_Be_Deleted()
         {
             Tenant? tenant = DbContext.Tenants.FirstOrDefault(x => x.Id.Equals(_tenant.Id));
 
